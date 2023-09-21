@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('color');
-           // $table->integer('role_id');
             $table->foreignId('role_id')->references('id')->on('roles');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 
