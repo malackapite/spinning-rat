@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId("amongus_id")->references("id")->on("amongus");
             $table->foreignId("task_id")->references("id")->on("task");
             $table->boolean("is_done");
-            // $table->timestamps();
+            //$table->timestamps();
         });
     }
 
