@@ -22,22 +22,22 @@ return new class extends Migration
         Amongus::create([
             'name' => 'Red sus',
             'color' => 'Red',
-            'role' => 2
+            'role_id' => 2
         ]);
         Amongus::create([
             'name' => 'Sussy baka',
             'color' => 'Green',
-            'role' => 2
+            'role_id' => 2
         ]);
         Amongus::create([
             'name' => 'Orang',
             'color' => 'Orange',
-            'role' => 1
+            'role_id' => 1
         ]);
         Amongus::create([
             'name' => 'Sussi baki',
             'color' => 'Pink',
-            'role' => 1
+            'role_id' => 1
         ]);
     }
 

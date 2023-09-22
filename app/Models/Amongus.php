@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Amongus extends Model
 {
     use HasFactory;
+
+    protected $fillable=["name",
+    "color" ,
+    "role_id"];
 }

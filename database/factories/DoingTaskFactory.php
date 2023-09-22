@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Amongus;
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +19,9 @@ class DoingTaskFactory extends Factory
     public function definition(): array
     {
         return [
-            "amongus_id" => random_int(1, 4),
-            "task_id" => random_int(1, 19),
-            "is_done" => random_int(0, 1)==1
+            "amongus_id" => Amongus::all()->random()->id,
+            "task_id" => Task::all()->random()->id,
+            "is_done" => random_int(0,1)
         ];
     }
 }
