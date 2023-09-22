@@ -9,7 +9,14 @@ class Amongus extends Model
 {
     use HasFactory;
 
-    protected $fillable=["name",
-    "color" ,
-    "role_id"];
+    protected $fillable = [
+        "name",
+        "color" ,
+        "role_id"
+    ];
+
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
 }
