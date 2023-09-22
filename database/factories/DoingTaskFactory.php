@@ -17,7 +17,9 @@ class DoingTaskFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "amongus_id" => random_int(1, 4),
+            "task_id" => random_int(1, 19),
+            "is_done" => random_int(0, 1)==1
         ];
     }
 }
