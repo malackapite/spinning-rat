@@ -13,9 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('doing_tasks', function (Blueprint $table) {
+            $table->id();
             $table->foreignId("amongus_id")->references("id")->on("amonguses");
             $table->foreignId("task_id")->references("id")->on("tasks");
-            $table->primary(["amongus_id","task_id"]);
+            //$table->primary(["amongus_id","task_id"]);
             $table->boolean("is_done");
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class RoleController extends Controller
         return $roles;
     }
 
-    public function delete($id){
+    public function destroy($id){
         Role::find($id)->delete();
         return redirect('/role/list');
     }
