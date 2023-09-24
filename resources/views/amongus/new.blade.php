@@ -1,4 +1,4 @@
-<form action="api/amonguses" method="post">
+<form action="/api/amonguses" method="post">
     {{csrf_field()}}
     <input type="text" name="name" placeholder="Name">
     <input type="text" name="color" placeholder="Color">

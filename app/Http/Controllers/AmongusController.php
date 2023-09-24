@@ -31,7 +31,7 @@ class AmongusController extends Controller
         $amongus = new Amongus();
         $amongus->name = $request->name;
         $amongus->color = $request->color;
-        $amongus->roleId = $request->roleId;
+        $amongus->role_id = $request->roleId;
         $amongus->save();
         return redirect('/amongus/list');
     }
@@ -41,7 +41,7 @@ class AmongusController extends Controller
         $amongus = Amongus::find($id);
         $amongus->name = $request->name;
         $amongus->color = $request->color;
-        $amongus->roleId = $request->roleId;
+        $amongus->role_id = $request->roleId;
         $amongus->save();
         return redirect('/amongus/list');
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AmongusController;
 use App\Http\Controllers\DoingTaskController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TaskController;
