@@ -38,19 +38,21 @@ Route::put('/api/roles/{id}', [RoleController::class, "update"]);
 Route::delete('/api/roles/{id}', [RoleController::class, "delete"]);
 //view routes
 Route::get('/role/new', [RoleController::class, "newView"]);
-Route::get('/role/list/{id}', [RoleController::class, "editView"]);
+Route::get('/role/edit/{id}', [RoleController::class, "editView"]);
 Route::get('/role/list', [RoleController::class, "listView"]);
 
 
 Route::get('/api/doingtasks', [DoingTaskController::class, "index"]);
-Route::get('/api/doingtasks/{id}', [DoingTaskController::class, "show"]);
+Route::get('/api/doingtasks/{id}/{id2}', [DoingTaskController::class, "show"]);
 Route::post('/api/doingtasks', [DoingTaskController::class, "store"]);
-Route::put('/api/doingtasks/{id}', [DoingTaskController::class, "update"]);
-Route::delete('/api/doingtasks/{id}', [DoingTaskController::class, "destroy"]);
+Route::put('/api/doingtasks/{id}/{id2}', [DoingTaskController::class, "update"]);
+Route::delete('/api/doingtasks/{id}/{id2}', [DoingTaskController::class, "destroy"]);
 //view routes
-Route::get('/doingtasks/new', [DoingTaskController::class, "newView"]);
-Route::get('/doingtasks/list/{id}', [DoingTaskController::class, "editView"]);
-Route::get('/doingtasks/list', [DoingTaskController::class, "listView"]);
+Route::get('/doingtask/new', [DoingTaskController::class, "newView"]);
+Route::get('/doingtask/edit/{id}/{id2}', [DoingTaskController::class, "editView"]);
+Route::get('/doingtask/list', [DoingTaskController::class, "listView"]);
+
+
 Route::get('/api/amonguses', [AmongusController::class, 'index']);
 Route::get('/api/amonguses/{id}', [AmongusController::class, 'show']);
 Route::post('/api/amonguses', [AmongusController::class, 'store']);

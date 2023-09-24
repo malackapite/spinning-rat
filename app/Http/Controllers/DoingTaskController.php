@@ -15,15 +15,15 @@ class DoingTaskController extends Controller
         return $doingtasks;
     }
 
-    public function show($id)
+    public function show($id, $id2)
     {
-        $doingtasks = response()->json(DoingTask::find($id));
+        $doingtasks = response()->json(DoingTask::where("amongus_id", $id)->where("task_id", $id2)->first());
         return $doingtasks;
     }
 
-    public function destroy($id)
+    public function destroy($id, $id2)
     {
-        DoingTask::find($id)->delete();
+        DoingTask::where("amongus_id", $id)->where("task_id", $id2)->first()->delete();
         return redirect('/doingtask/list');
     }
 
@@ -37,13 +37,14 @@ class DoingTaskController extends Controller
         return redirect('/doingtask/list');
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $id2)
     {
-        $doingtasks = DoingTask::find($id);
-        $doingtasks->amongus_id = $request->amongus_id;
-        $doingtasks->task_id = $request->task_id;
-        $doingtasks->is_done = $request->is_done;
-        $doingtasks->save();;
+        $doingtask = DoingTask::where("amongus_id", $id)->where("task_id", $id2)->first();
+        $doingtask->amongus_id = $request->amongus_id;
+        $doingtask->task_id = $request->task_id;
+        $doingtask->is_done = $request->is_done;
+        $doingtask->save();
+        
         return redirect('/doingtask/list');
     }
 
@@ -54,12 +55,12 @@ class DoingTaskController extends Controller
         return view('doingtask.new', ["amonguses" => $amonguses, "tasks" => $tasks]);
     }
 
-    public function editView($id)
+    public function editView($id, $id2)
     {
         $amonguses = Amongus::all();
         $tasks = Task::all();
-        $doingtasks = DoingTask::find($id);
-        return view('doingtask.edit', ["amonguses" => $amonguses, "tasks" => $tasks, "doingtasks" => $doingtasks]);
+        $doingtask = DoingTask::where("amongus_id", $id)->where("task_id", $id2)->first();
+        return view('doingtask.edit', ["amonguses" => $amonguses, "tasks" => $tasks, "doingtask" => $doingtask]);
     }
 
     public function listView()
