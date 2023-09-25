@@ -3,7 +3,8 @@
         {{csrf_field()}}
         {{method_field('GET')}}
         <div class="form-group">
-            <input type="submit" value="{{$doingtask->amongus_id}}🐈💨{{$doingtask->task_id}}">
+        <input type="submit" value="{{$doingtask->amongus->name}}">
+        <input type="submit" value="{{$doingtask->task->name}}">
         </div>
     </form>
 @endforeach

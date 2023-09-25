@@ -22,9 +22,9 @@ class DoingTask extends Model
         return $this->belongsTo("App\Models\Task");
     }
 
-    protected function setKeysForSaveQuery(Builder $query)
-    {
-        return $query->where('amongus_id', $this->getAttribute('amongus_id'))
-            ->where('task_id', $this->getAttribute('task_id'));
-    }
+    // protected function setKeysForSaveQuery(Builder $query)
+    // {
+    //     return $query->where('amongus_id', $this->getAttribute('amongus_id'))
+    //         ->where('task_id', $this->getAttribute('task_id'));
+    // }
 }
