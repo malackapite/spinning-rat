@@ -40,8 +40,8 @@ class DoingTaskController extends Controller
     public function update(Request $request, $id, $id2)
     {
         $doingtask = DoingTask::where("amongus_id", $id)->where("task_id", $id2)->first();
-        $doingtask->amongus_id = $request->amongus_id;
-        $doingtask->task_id = $request->task_id;
+        // $doingtask->amongus_id = $request->amongus_id;
+        // $doingtask->task_id = $request->task_id;
         $doingtask->is_done = $request->is_done;
         $doingtask->save();
         
