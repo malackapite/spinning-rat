@@ -24,7 +24,7 @@
             <?php echo $doingtask->is_done == 1 ? 'selected' : '' ?>
             >Done</option>
             <option value="0"
-            <?php echo $doingtask->is_done == 1 ? 'selected' : '' ?>
+            <?php echo $doingtask->is_done == 0 ? 'selected' : '' ?>
             >Not done</option>
         </select>
         <input type="submit" value="Ok">

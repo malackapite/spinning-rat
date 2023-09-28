@@ -11,7 +11,7 @@ class DoingTask extends Model
     use HasFactory;
 
     protected $table="doing_tasks";
-    protected $primaryKey=array("amongus_id","task_id");
+    // protected $primaryKey=array("amongus_id","task_id");
     public $incrementing=false;
     protected $fillable=["amongus_id","task_id","id_done"];
     public function amongus(){
@@ -22,9 +22,9 @@ class DoingTask extends Model
         return $this->belongsTo("App\Models\Task");
     }
 
-    // protected function setKeysForSaveQuery(Builder $query)
-    // {
-    //     return $query->where('amongus_id', $this->getAttribute('amongus_id'))
-    //         ->where('task_id', $this->getAttribute('task_id'));
-    // }
+    protected function setKeysForSaveQuery($query)
+    {
+        return $query->where('amongus_id', $this->getAttribute('amongus_id'))
+            ->where('task_id', $this->getAttribute('task_id'));
+    }
 }
